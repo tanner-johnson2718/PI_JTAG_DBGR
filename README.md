@@ -13,7 +13,7 @@
 * RPI 4 model B
 * Download Raspian OS at [link](https://www.raspberrypi.com/software/operating-systems/)
     * SHA256 Hash - `722305ccd11fad2e7d49f29db551b0a5d4ac10e267f33c05a620b74eea5165db`
-* Flass using `dd`
+* Flass using `dd `
 * Use mouse, keyboard, and monitor for init setup
 * Install openocd:
 
@@ -27,18 +27,24 @@ cd openocd
 ./bootstrap
 ./configure --enable-sysfsgpio --enable-bcm2835gpio
 make
+sudo make install2
 ```
 
 * cat the rpi host config file `cat tcl/interface/raspberrypi-gpio-connector.cfg` and verify it matches the table below
 
-| PI Header PIN | BCM GPIO # | JTAG Func |
-| --- | --- | --- |
-| 23 |  11 | TCK |
-| 23 |   8 | TMS |
-| 19 |  10 | TDI |
-| 21 |   9 | TDO |
-| 20 | GND | GND |
+| PI Header PIN | BCM GPIO # | JTAG Func | ESP32 PIN | COLOR
+| --- | --- | --- | --- | --- |
+| 23 |  11 | TCK | IO13 | ORNG |
+| 24 |   8 | TMS | IO14 | BRWN |
+| 19 |  10 | TDI | IO12 | YLLW |
+| 21 |   9 | TDO | IO15 | GREN |
+| 20 | GND | GND |  GND | BLCK |
+|  2 |  5v |  5v |   5v |  RED |
 
+# ESP 32 Set Up
+
+
+ 
 # Datasheets and Refs
 
 * [BCM2711](./Docs/bcm2711-peripherals.pdf)
