@@ -30,7 +30,7 @@ sudo make install
 
 * cat the rpi host config file `cat tcl/interface/raspberrypi-gpio-connector.cfg` and verify the pin setup matches the table below
 
-| PI Header PIN | BCM GPIO # | JTAG Func | ESP32 PIN | COLOR
+| PI Header PIN | BCM GPIO # | JTAG Func | ESP32 PIN | COLOR |
 | --- | --- | --- | --- | --- |
 | 23 |  11 | TCK | IO13 | ORNG |
 | 24 |   8 | TMS | IO14 | BRWN |
@@ -61,7 +61,7 @@ idf.py -p /dev/ttyUSB0 monitor
 * Doing all of the above will create a dev env on your local machine, build, flash and give you a serial monitor of an ESP-32
 * Ensure the ESP 32 is connected in accordance with the pinout table in the previous section.
 
-# OpenOCD and Remote Debugging
+# OpenOCD and Remote Debugging the ESP 32
 
 Using the ESP 32 and the hello world application, we suggest the following dev env for using openocd and gdb. Terminal 1 runs the openocd server. This can be ran with debug verbosity. This requires first ssh-ing into the pi and running the contents of the `esp32_openocd.sh` script, specifying a jtag interface rate and an IP to bind to. 
 
@@ -71,8 +71,23 @@ Terminal 3 runs the telnet server that gives you cmd access into openocd. Its la
 
 Terminal 4 runs gdb. `cd` in the target code repo and run `idf.py gdb`. This will launch gdb. And if you want you could have terminal 5 be your "build window" for building and flashing new images to the device.
 
+# Setting Up the (other) PI4 as a JTAG Target
 
- 
+| Target PI Header PIN | BCM2835 GPIO # | JTAG Func | Color |
+| --- | --- | --- | --- |
+| 22 | GPIO 25 | TCK | ORNG |
+| 13 | GPIO 27 | TMS | BRWN |
+| 37 | GPIO 26 | TDI | YLLW |
+| 18 | GPIO 24 | TDO | GREN |
+| 20 |   GND   | GND | BLCK | 
+
+```
+# In config.txt in boot parition on target pi enter:
+gpio=22-27=np
+enable_jtag_gpio=1
+```
+
+
 # Datasheets and Refs
 
 * [BCM2711](./Docs/bcm2711-peripherals.pdf)
