@@ -32,12 +32,13 @@ sudo make install
 
 | PI Header PIN | BCM GPIO # | JTAG Func | ESP32 PIN | COLOR |
 | --- | --- | --- | --- | --- |
-| 23 |  11 | TCK | IO13 | ORNG |
-| 24 |   8 | TMS | IO14 | BRWN |
-| 19 |  10 | TDI | IO12 | YLLW |
-| 21 |   9 | TDO | IO15 | GREN |
-| 20 | GND | GND |  GND | BLCK |
-|  2 |  5v |  5v |   5v |  RED |
+| 23 |  11 |  TCK | IO13 | ORNG |
+| 24 |   8 |  TMS | IO14 | BRWN |
+| 19 |  10 |  TDI | IO12 | YLLW |
+| 21 |   9 |  TDO | IO15 | GREN |
+| 20 | GND |  GND |  GND | BLCK |
+|  2 |  5v |   5v |   5v |  RED |
+| 26 |   7 | TRST |  N/A | WHTE |
 
 * Enable ssh through gui and now mouse keyboard are no longer required, we can just ssh in.
 
@@ -70,35 +71,3 @@ Terminal 2 runs the local host to rasp pi IP tunnel and is launched via `gdb_tun
 Terminal 3 runs the telnet server that gives you cmd access into openocd. Its launched via `telnet <pi IP> 4444`. Ctl-] is the escape char. The commands you can run our documented [here](https://openocd.org/doc/html/General-Commands.html).
 
 Terminal 4 runs gdb. `cd` in the target code repo and run `idf.py gdb`. This will launch gdb. And if you want you could have terminal 5 be your "build window" for building and flashing new images to the device.
-
-# Setting Up the (other) PI4 as a JTAG Target
-
-| Target PI Header PIN | BCM2835 GPIO # | JTAG Func | Color |
-| --- | --- | --- | --- |
-| 22 | GPIO 25 | TCK | ORNG |
-| 13 | GPIO 27 | TMS | BRWN |
-| 37 | GPIO 26 | TDI | YLLW |
-| 18 | GPIO 24 | TDO | GREN |
-| 20 |   GND   | GND | BLCK | 
-
-```
-# In config.txt in boot parition on target pi enter:
-gpio=22-27=np
-enable_jtag_gpio=1
-```
-
-* [SMP in openocd](https://openocd.org/doc/html/GDB-and-OpenOCD.html#usingopenocdsmpwithgdb)
-* [6.3.4 more about SMP in openOCD](https://openocd.org/doc/html/Config-File-Guidelines.html)
-* On pi to launch a session: `openocd -f tcl/interface/raspberrypi-native.cfg -c "set USE_SMP 1" -f tcl/target/bcm2711.cfg -c "bindto 10.0.0.185"`
-    * Note that we are setting use SMP cause our linux kernel is SMP and we must have that `-c` command before we load the `bcm2711.cfg` config
-* [GDB openocd set up doc](https://openocd.org/doc/html/Server-Configuration.html)
-
-
-# Datasheets and Refs
-
-* [BCM2711](./Docs/bcm2711-peripherals.pdf)
-* [RPI Schema](./Docs/raspberry-pi-4-reduced-schematics.pdf)
-* [ESP32](./Docs/esp32-wroom-32_datasheet_en.pdf)
-* [RPI OpenOCD Host Blog](https://blog.wokwi.com/gdb-debugging-esp32-using-raspberry-pi/)
-* [Set up RPI as JTAG Target](https://sysprogs.com/VisualKernel/tutorials/raspberry/jtagsetup/)
-* [Set up RPI as JTAG Target 2](https://www.vinnie.work/blog/2020-11-06-baremetal-rpi4-setup)
