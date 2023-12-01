@@ -65,7 +65,15 @@ idf.py -p /dev/ttyUSB0 monitor
 
 # OpenOCD and Remote Debugging
 
-* `telnet localhost 4444` -> Gives command interface
+Using the ESP 32 and the hello world application, we suggest the following dev env for using openocd and gdb. Terminal 1 runs the openocd server. This can be ran with debug verbosity. This requires first ssh-ing into the pi and running the contents of the `esp32_openocd.sh` script, specifying a jtag interface rate and an IP to bind to. 
+
+Terminal 2 runs the local host to rasp pi IP tunnel and is launched via `gdb_tunnel.sh` script, again specifying an IP. You may need to enter the password when connections go across the tunnel so its best just to keep it up.
+
+Terminal 3 runs the telnet server that gives you cmd access into openocd. Its launched via `telnet <pi IP> 4444`. Ctl-] is the escape char. The commands you can run our documented [here](https://openocd.org/doc/html/General-Commands.html).
+
+Terminal 4 runs gdb. `cd` in the target code repo and run `idf.py gdb`. This will launch gdb. And if you want you could have terminal 5 be your "build window" for building and flashing new images to the device.
+
+
  
 # Datasheets and Refs
 
