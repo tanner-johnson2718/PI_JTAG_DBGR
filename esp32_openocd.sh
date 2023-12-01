@@ -3,5 +3,4 @@ if [ $# != 2 ]; then
     exit
 fi
 
-cd ~/openocd
-openocd -f tcl/interface/raspberrypi-native.cfg -f tcl/target/esp32.cfg -c "adapter speed ${1}" -c "bindto ${2}"
+openocd -f ./openocd_config/rp4_interface.cfg -f ./openocd_config/esp32_target.cfg -c "adapter speed ${1}" -c "bindto ${2}"
