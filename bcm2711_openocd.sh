@@ -3,4 +3,4 @@ if [ $# != 1 ]; then
     exit
 fi
 
-openocd -f ./openocd_config/rp4_interface.cfg -f ./openocd_config/bcm2711_target.cfg -c "bindto ${1}"
+openocd -f ./openocd_config/rpi4_interface.cfg -f ./openocd_config/bcm2711_target.cfg -c "bindto ${1}"

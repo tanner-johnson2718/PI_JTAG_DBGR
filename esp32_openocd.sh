@@ -3,4 +3,4 @@ if [ $# != 2 ]; then
     exit
 fi
 
-openocd -f ./openocd_config/rp4_interface.cfg -f ./openocd_config/esp32_target.cfg -c "adapter speed ${1}" -c "bindto ${2}"
+openocd -f ./openocd_config/rpi4_interface.cfg -f ./openocd_config/esp32_target.cfg -c "adapter speed ${1}" -c "bindto ${2}"
