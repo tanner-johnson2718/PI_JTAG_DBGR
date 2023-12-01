@@ -45,7 +45,27 @@ sudo make install
 
 # ESP 32 Set Up
 
-* On Host PC install
+* On Host PC install ESP IDF in visual code
+    * Can also follow the first steps [here](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html#get-started-linux-macos-first-steps)
+* Save an alias in your .bashrc : `alias get_idf='. $HOME/esp/esp-idf/export.sh'`
+* Copy over an example project `cp -r ~/esp/esp-idf/examples/get-started/hello-world`
+* Run the following to build this example
+
+```
+cd hello-world
+get_idf
+idf.py set-target esp32
+idf.py build
+idf.py -p /dev/ttyUSB0 flash
+idf.py -p /dev/ttyUSB0 monitor
+```
+
+* Doing all of the above will create a dev env on your local machine, build, flash and give you a serial monitor of an ESP-32
+* Ensure the ESP 32 is connected in accordance with the pinout table in the previous section.
+
+# OpenOCD and Remote Debugging
+
+* `telnet localhost 4444` -> Gives command interface
  
 # Datasheets and Refs
 
