@@ -13,7 +13,7 @@
 * RPI 4 model B
 * Download Raspian OS at [link](https://www.raspberrypi.com/software/operating-systems/)
     * SHA256 Hash - `722305ccd11fad2e7d49f29db551b0a5d4ac10e267f33c05a620b74eea5165db`
-* Flass using `dd `
+* Flash using `dd`
 * Use mouse, keyboard, and monitor for init setup
 * Install openocd:
 
@@ -27,10 +27,10 @@ cd openocd
 ./bootstrap
 ./configure --enable-sysfsgpio --enable-bcm2835gpio
 make
-sudo make install2
+sudo make install
 ```
 
-* cat the rpi host config file `cat tcl/interface/raspberrypi-gpio-connector.cfg` and verify it matches the table below
+* cat the rpi host config file `cat tcl/interface/raspberrypi-gpio-connector.cfg` and verify the pin setup matches the table below
 
 | PI Header PIN | BCM GPIO # | JTAG Func | ESP32 PIN | COLOR
 | --- | --- | --- | --- | --- |
@@ -41,9 +41,11 @@ sudo make install2
 | 20 | GND | GND |  GND | BLCK |
 |  2 |  5v |  5v |   5v |  RED |
 
+* Enable ssh through gui and now mouse keyboard are no longer required, we can just ssh in.
+
 # ESP 32 Set Up
 
-
+* On Host PC install
  
 # Datasheets and Refs
 
