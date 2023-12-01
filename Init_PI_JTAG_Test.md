@@ -87,6 +87,12 @@ gpio=22-27=np
 enable_jtag_gpio=1
 ```
 
+* [SMP in openocd](https://openocd.org/doc/html/GDB-and-OpenOCD.html#usingopenocdsmpwithgdb)
+* [6.3.4 more about SMP in openOCD](https://openocd.org/doc/html/Config-File-Guidelines.html)
+* On pi to launch a session: `openocd -f tcl/interface/raspberrypi-native.cfg -c "set USE_SMP 1" -f tcl/target/bcm2711.cfg -c "bindto 10.0.0.185"`
+    * Note that we are setting use SMP cause our linux kernel is SMP and we must have that `-c` command before we load the `bcm2711.cfg` config
+* [GDB openocd set up doc](https://openocd.org/doc/html/Server-Configuration.html)
+
 
 # Datasheets and Refs
 
@@ -95,3 +101,4 @@ enable_jtag_gpio=1
 * [ESP32](./Docs/esp32-wroom-32_datasheet_en.pdf)
 * [RPI OpenOCD Host Blog](https://blog.wokwi.com/gdb-debugging-esp32-using-raspberry-pi/)
 * [Set up RPI as JTAG Target](https://sysprogs.com/VisualKernel/tutorials/raspberry/jtagsetup/)
+* [Set up RPI as JTAG Target 2](https://www.vinnie.work/blog/2020-11-06-baremetal-rpi4-setup)
