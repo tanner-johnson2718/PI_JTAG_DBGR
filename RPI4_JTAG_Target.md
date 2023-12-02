@@ -23,4 +23,5 @@ enable_jtag_gpio=1
     * Note that we are setting use SMP cause our linux kernel is SMP and we must have that `-c` command before we load the `bcm2711.cfg` config
 * [GDB openocd set up doc](https://openocd.org/doc/html/Server-Configuration.html)
 * Just made our own config: [bcm2711_target.cfg](./openocd_config/bcm2711_target.cfg).
-* Consolodated all the rpi4 interface into one [file](./openocd_config/rpi4_interface.cfg):
+* Consolodated all the rpi4 interface into one [file](./openocd_config/rpi4_interface.cfg)
+* Need to run `$_TARGETNAME configure -rtos hwthread` for every target i.e. CPU.
