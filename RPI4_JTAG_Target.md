@@ -25,3 +25,5 @@ enable_jtag_gpio=1
 * Just made our own config: [bcm2711_target.cfg](./openocd_config/bcm2711_target.cfg).
 * Consolodated all the rpi4 interface into one [file](./openocd_config/rpi4_interface.cfg)
 * Need to run `$_TARGETNAME configure -rtos hwthread` for every target i.e. CPU.
+* Also need to add `-coreid $_core` to thread creation.
+* All of this is reflected in the bcm2711 config target file and creates a gdb target that behaves as expected.
