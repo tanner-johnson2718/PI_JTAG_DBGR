@@ -1,8 +1,11 @@
 # PI JTAG Debugger
 
+This project started off as turning a RPI into a JTAG debuger / Flasher. However as 
+
 * [Init Set up of PI JTAG Debugger](./Init_PI_JTAG_Test.md)
 * [Targeting and Setting up an ESP32 Dev Env](./Init_PI_JTAG_Test.md#esp-32-set-up)
 * [Targeting an RPI 4](./RPI4_JTAG_Target.md)
+* [Setting up the Osc Scope SW](./install_osc_scope.md)
 
 # Datasheets and Refs
 
