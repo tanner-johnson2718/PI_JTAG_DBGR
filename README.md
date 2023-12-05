@@ -1,15 +1,16 @@
 # PI JTAG Debugger
 
-This project started off as turning a RPI into a JTAG debuger / Flasher. However as 
+This project started off as turning a RPI into a JTAG debuger / Flasher. However as the project progressed we decided to intergate this as the center piece of an electronics work bench. The pi will provide the user interface via a desktop environment and the workbench will feature the following:
 
-* [Init Set up of PI JTAG Debugger](./Init_PI_JTAG_Test.md)
-* [Targeting and Setting up an ESP32 Dev Env](./Init_PI_JTAG_Test.md#esp-32-set-up)
-* [Targeting an RPI 4](./RPI4_JTAG_Target.md)
-* [Setting up the Osc Scope SW](./install_osc_scope.md)
+* Soldier Station
+* Bench Power Supply
+* RPI w/ mouse, keyboard and monitor interface
+    * USB Osc scope
+    * JTAG interface
+    * UART interface
+    * SPI interface
 
-# Pin Outs
-
-## JTAG
+# JTAG
 
 | PI Header PIN | BCM GPIO # | JTAG Func | COLOR |
 | --- | --- | --- | --- |
@@ -21,13 +22,21 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 | 18 |  26 | SRST | BLUE |
 | 20 | GND |  GND | BLCK |
 
+* [Init Set up of PI JTAG Debugger](./Init_PI_JTAG_Test.md)
+* [Targeting and Setting up an ESP32 Dev Env](./Init_PI_JTAG_Test.md#esp-32-set-up)
+* [Targeting an RPI 4](./RPI4_JTAG_Target.md)
+
 ## UART
 
 | PI Header PIN | BCM GPIO # | UART Func | COLOR |
 | --- | --- | --- | --- |
 |  6 |     GND | GND | BLCK |
 |  8 | GPIO 14 |  TX | WHTE |
-| 10 | GPIO 15 |  RX | GRAY |  
+| 10 | GPIO 15 |  RX | GRAY |
+
+# Osc Scope
+
+* [Setting up the Osc Scope SW](./install_osc_scope.md)
 
 
 # Datasheets and Refs
