@@ -8,7 +8,7 @@
 
 # Init PI OS Set up
 
-* RPI 4 model B
+* RPI 4 model B 2gb RAM
 * Download Raspian OS at [link](https://www.raspberrypi.com/software/operating-systems/)
     * SHA256 Hash - `722305ccd11fad2e7d49f29db551b0a5d4ac10e267f33c05a620b74eea5165db`
 * Flash using `dd`
@@ -39,6 +39,7 @@ sudo make install
 | 20 | GND |  GND |  GND | BLCK |
 |  2 |  5v |   5v |   5v |  RED |
 | 26 |   7 | TRST |  N/A | WHTE |
+| 18 |  26 | SRST |  N/A | BLUE |
 
 * Enable ssh through gui and now mouse keyboard are no longer required, we can just ssh in.
 
