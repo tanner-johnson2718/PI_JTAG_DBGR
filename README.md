@@ -7,6 +7,29 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 * [Targeting an RPI 4](./RPI4_JTAG_Target.md)
 * [Setting up the Osc Scope SW](./install_osc_scope.md)
 
+# Pin Outs
+
+## JTAG
+
+| PI Header PIN | BCM GPIO # | JTAG Func | COLOR |
+| --- | --- | --- | --- |
+| 23 |  11 |  TCK | ORNG |
+| 24 |   8 |  TMS | BRWN |
+| 19 |  10 |  TDI | YLLW |
+| 21 |   9 |  TDO | GREN |
+| 26 |   7 | TRST | WHTE |
+| 18 |  26 | SRST | BLUE |
+| 20 | GND |  GND | BLCK |
+
+## UART
+
+| PI Header PIN | BCM GPIO # | UART Func | COLOR |
+| --- | --- | --- | --- |
+|  6 |     GND | GND | BLCK |
+|  8 | GPIO 14 |  TX | WHTE |
+| 10 | GPIO 15 |  RX | GRAY |  
+
+
 # Datasheets and Refs
 
 * [BCM2711](./Docs/bcm2711-peripherals.pdf)
