@@ -42,7 +42,7 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 # Datasheets and Refs
 
 * [BCM2711](./Docs/bcm2711-peripherals.pdf)
-* [RPI Schema](./Docs/raspberry-pi-4-reduced-schematics.pdf)
+* [RPI Schematics](./Docs/raspberry-pi-4-reduced-schematics.pdf)
 * [ESP32 Wroom 32 Data Sheet](./Docs/esp32-wroom-32_datasheet_en.pdf)
 * [RPI OpenOCD Host Blog](https://blog.wokwi.com/gdb-debugging-esp32-using-raspberry-pi/)
 * [Set up RPI as JTAG Target](https://sysprogs.com/VisualKernel/tutorials/raspberry/jtagsetup/)
