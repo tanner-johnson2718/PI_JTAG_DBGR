@@ -34,6 +34,8 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 |  8 | GPIO 14 |  TX | WHTE |
 | 10 | GPIO 15 |  RX | GRAY |
 
+* [ESP32 and PI aux UART Setup](./ESP32_GPIO_UART.md)
+
 # Osc Scope
 
 * [Setting up the Osc Scope SW](./install_osc_scope.md)
