@@ -12,6 +12,8 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 
 # JTAG
 
+* [Init Set up of PI JTAG Debugger](./writeups/Init_PI_JTAG_Test.md)
+
 | PI Header PIN | BCM GPIO # | JTAG Func | COLOR |
 | --- | --- | --- | --- |
 | 23 |  11 |  TCK | ORNG |
@@ -22,13 +24,13 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 | 18 |  26 | SRST | BLUE |
 | 20 | GND |  GND | BLCK |
 
-* [Init Set up of PI JTAG Debugger](./writeups/Init_PI_JTAG_Test.md)
 * [Targeting and Setting up an ESP32 Dev Env](./writeups/Init_PI_JTAG_Test.md#esp-32-set-up)
 * [Targeting an RPI 4](./writeups/RPI4_JTAG_Target.md)
 
-## UART
+# UART
 
 * On the pi make sure `/boot/confit.txt` has `enable_uart=1`
+    * Can do this by `sudo raspi-config` -> Serial Config 
 * This creates device `/dev/ttyS0` as serial device for the GPIO header UART
 
 | PI Header PIN | BCM GPIO # | UART Func | COLOR |
@@ -39,10 +41,24 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 
 * [ESP32 and PI aux UART Setup](./writeups/ESP32_GPIO_UART.md)
 
+# SPI
+
+* On the pi use the gui, menu->Preferences->Raspberry Pin Config and turn on SPI
+* Reboot
+* Run `sudo raspi-config` -> interface options -> enable SPI
+* Reboot
+* Open `/boot/config.txt` and add `dtoverlay=spi6-1cs,cs0_pin=16`
+
+| PI Header PIN | BCM GPIO # | SPI Func | COLOR |
+| --- | --- | --- | --- |
+|  6 | GPIO 18 | CS_0 | ??? |
+|  8 | GPIO 19 | MISO | ??? |
+| 10 | GPIO 20 | MOSI | ??? |
+| 10 | GPIO 21 | SCLK | ??? |
+
 # Osc Scope
 
 * [Setting up the Osc Scope SW](./writeups/install_osc_scope.md)
-
 
 # Datasheets and Refs
 
