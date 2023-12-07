@@ -22,11 +22,14 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 | 18 |  26 | SRST | BLUE |
 | 20 | GND |  GND | BLCK |
 
-* [Init Set up of PI JTAG Debugger](./Init_PI_JTAG_Test.md)
-* [Targeting and Setting up an ESP32 Dev Env](./Init_PI_JTAG_Test.md#esp-32-set-up)
-* [Targeting an RPI 4](./RPI4_JTAG_Target.md)
+* [Init Set up of PI JTAG Debugger](./writeups/Init_PI_JTAG_Test.md)
+* [Targeting and Setting up an ESP32 Dev Env](./writeups/Init_PI_JTAG_Test.md#esp-32-set-up)
+* [Targeting an RPI 4](./writeups/RPI4_JTAG_Target.md)
 
 ## UART
+
+* On the pi make sure `/boot/confit.txt` has `enable_uart=1`
+* This creates device `/dev/ttyS0` as serial device for the GPIO header UART
 
 | PI Header PIN | BCM GPIO # | UART Func | COLOR |
 | --- | --- | --- | --- |
@@ -34,11 +37,11 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 |  8 | GPIO 14 |  TX | WHTE |
 | 10 | GPIO 15 |  RX | GRAY |
 
-* [ESP32 and PI aux UART Setup](./ESP32_GPIO_UART.md)
+* [ESP32 and PI aux UART Setup](./writeups/ESP32_GPIO_UART.md)
 
 # Osc Scope
 
-* [Setting up the Osc Scope SW](./install_osc_scope.md)
+* [Setting up the Osc Scope SW](./writeups/install_osc_scope.md)
 
 
 # Datasheets and Refs
@@ -53,3 +56,4 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 * [Arm A72 TRM](./Docs/cortex_a72_mpcore_trm_100095_0001_02_en.pdf)
 * [ESP 32 Programming Model](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html)
 * [ESP 32 TRM](./Docs/esp32_technical_reference_manual_en.pdf)
+* [ESP 32 Pinout](./Docs/ESP32-36-Pin-Pinout.jpg)
