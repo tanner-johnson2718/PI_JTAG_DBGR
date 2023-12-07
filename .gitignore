@@ -2,3 +2,4 @@
 hello_world/build
 Bare_Metal/build_tools
 OS_imgs
+esp32_builds/*/build
