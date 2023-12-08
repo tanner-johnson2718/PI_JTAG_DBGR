@@ -48,13 +48,15 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 * Run `sudo raspi-config` -> interface options -> enable SPI
 * Reboot
 * Open `/boot/config.txt` and add `dtoverlay=spi6-1cs,cs0_pin=16`
+* Can double check with `raspi-gpio get`
+* Creates device `/dev/spidev6.0`
 
 | PI Header PIN | BCM GPIO # | SPI Func | COLOR |
 | --- | --- | --- | --- |
-|  6 | GPIO 18 | CS_0 | ??? |
-|  8 | GPIO 19 | MISO | ??? |
-| 10 | GPIO 20 | MOSI | ??? |
-| 10 | GPIO 21 | SCLK | ??? |
+| 36 | GPIO 16 | CS_0 |  RED |
+| 35 | GPIO 19 | MISO |  TAN |
+| 38 | GPIO 20 | MOSI | ORNG |
+| 40 | GPIO 21 | SCLK | YLLW |
 
 # Osc Scope
 
