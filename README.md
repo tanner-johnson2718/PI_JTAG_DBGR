@@ -50,6 +50,7 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 * Open `/boot/config.txt` and add `dtoverlay=spi6-1cs,cs0_pin=16`
 * Can double check with `raspi-gpio get`
 * Creates device `/dev/spidev6.0`
+* See [docs](./Docs/draft_spidev_doc.pdf) for python API
 
 | PI Header PIN | BCM GPIO # | SPI Func | COLOR |
 | --- | --- | --- | --- |
@@ -75,3 +76,4 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 * [ESP 32 Programming Model](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/index.html)
 * [ESP 32 TRM](./Docs/esp32_technical_reference_manual_en.pdf)
 * [ESP 32 Pinout](./Docs/ESP32-36-Pin-Pinout.jpg)
+* [SpiDev Doc](./Docs/draft_spidev_doc.pdf)
