@@ -59,6 +59,8 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 | 38 | GPIO 20 | MOSI | ORNG |
 | 40 | GPIO 21 | SCLK | YLLW |
 
+* [ESP 32 SPI Example](./writeups/ESP32_SPI_Example.md)
+
 # Osc Scope
 
 * [Setting up the Osc Scope SW](./writeups/install_osc_scope.md)
