@@ -8,3 +8,6 @@ In this write up we will use our rpi4 jtag debugger to reverse engineer an image
 * Assume we have access to the [TRM](../Docs/esp32_technical_reference_manual_en.pdf)
 
 # Step 1
+
+* Playing with the base openOCD installation that we have has shown that the base openOCD is not sufficient to mess with the flash memory at least using the telnet interface.
+* Using the gdb `dump binary memory result.bin <start_addr> <finish_addr>` results in failed reads. 
