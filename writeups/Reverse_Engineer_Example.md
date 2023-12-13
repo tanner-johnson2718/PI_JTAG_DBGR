@@ -7,7 +7,14 @@ In this write up we will use our rpi4 jtag debugger to reverse engineer an image
 * Goal is to extract the full binary image that is used and determine the segments loaded to memory
 * Assume we have access to the [TRM](../Docs/esp32_technical_reference_manual_en.pdf)
 
-# Step 1
+# Step 1 Setting up the debug env
 
 * Playing with the base openOCD installation that we have has shown that the base openOCD is not sufficient to mess with the flash memory at least using the telnet interface.
-* Using the gdb `dump binary memory result.bin <start_addr> <finish_addr>` results in failed reads. 
+* Using the gdb `dump binary memory result.bin <start_addr> <finish_addr>` results in failed reads.
+* Given this we install the esp32 openocd fork at [link](https://github.com/espressif/openocd-esp32) on the rpi
+
+# Step 2 Writing Flash memory
+
+* `openocd -f ./openocd_config/rpi4_interface.cfg -f target/esp32.cfg -c "adapter speed 1000" -c "bindto 192.168." -c "program_esp ../hello_world.bin 0x10000 verify exit"`
+
+# Step 3 Pulling flash memory
