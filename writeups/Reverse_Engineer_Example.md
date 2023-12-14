@@ -18,3 +18,15 @@ In this write up we will use our rpi4 jtag debugger to reverse engineer an image
 * `openocd -f ./openocd_config/rpi4_interface.cfg -f target/esp32.cfg -c "adapter speed 1000" -c "bindto 192.168." -c "program_esp ../hello_world.bin 0x10000 verify exit"`
 
 # Step 3 Pulling flash memory
+
+* For some reason you have to use the `read_memory` command to init the spi flash
+* Now can use the `dump_image <file> <addr> <count>` telnet command
+* with `addr = 0x3F400000 count=0x30000` pulls the start of the binary image but only gathers the first 0x10000 bytes then fails.
+    * Doing a read memory on the next chunk, `0x3f410000` fails?
+    * Something is happening here maybe with regards to paging?
+
+# Step 4 Putting a trigger on very early boot
+
+* Pretty trivial, just use tcl commands: `halt` folled by `reset`
+* Sometime messes up
+* If it works seems the earliest execution we get is at `0x40000400`
