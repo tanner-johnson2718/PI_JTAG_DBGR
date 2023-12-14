@@ -26,6 +26,7 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 
 * [Targeting and Setting up an ESP32 Dev Env](./writeups/Init_PI_JTAG_Test.md#esp-32-set-up)
 * [Targeting an RPI 4](./writeups/RPI4_JTAG_Target.md)
+* [Using JTAG to reverse engineer a esp32](./writeups/Reverse_Engineer_Example.md)
 
 # UART
 
