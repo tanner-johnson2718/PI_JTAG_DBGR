@@ -1,14 +1,6 @@
 # PI JTAG Debugger
 
-This project started off as turning a RPI into a JTAG debuger / Flasher. However as the project progressed we decided to intergate this as the center piece of an electronics work bench. The pi will provide the user interface via a desktop environment and the workbench will feature the following:
-
-* Soldier Station
-* Bench Power Supply
-* RPI w/ mouse, keyboard and monitor interface
-    * USB Osc scope
-    * JTAG interface
-    * UART interface
-    * SPI interface
+This project started off as turning a RPI into a JTAG debuger / Flasher. However, this pi has turned into the place where compiled images are deployed to target devices (ESP32, another pi sd card, etc), and a debug harness for devices with various intergaces (typ).
 
 # JTAG
 
@@ -65,6 +57,15 @@ This project started off as turning a RPI into a JTAG debuger / Flasher. However
 # Osc Scope
 
 * [Setting up the Osc Scope SW](./writeups/install_osc_scope.md)
+
+# NFS Client
+
+```
+sudo apt update
+sudo apt install nfs-common
+sudo mkdir ~/nfs_root
+sudo mount -t nfs 192.168.0.14:/home/hipi/nfs_root ~/nfs_root
+```
 
 # Datasheets and Refs
 
