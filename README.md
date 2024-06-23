@@ -1,6 +1,6 @@
 # PI JTAG Debugger
 
-This project started off as turning a RPI into a JTAG debuger / Flasher. However, this pi has turned into the place where compiled images are deployed to target devices (ESP32, another pi sd card, etc), and a debug harness for devices with various intergaces (typ).
+Use a Raspberry PI to as a JTAG debugger!!
 
 # JTAG
 
